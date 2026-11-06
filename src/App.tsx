@@ -322,7 +322,7 @@ export default function App() {
           />
         )}
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8" id="catalog-content-section">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-4 pb-20 md:py-8 space-y-6 sm:space-y-8" id="catalog-content-section">
           {/* TAB 1: Main Catalog View */}
           {activeTab === 'catalog' && (
             <div className="space-y-8">
@@ -439,7 +439,9 @@ export default function App() {
       />
 
       {/* Footer */}
-      <Footer onSelectTab={setActiveTab} />
+      <div className="pb-16 md:pb-0">
+        <Footer onSelectTab={setActiveTab} />
+      </div>
     </div>
   );
 }

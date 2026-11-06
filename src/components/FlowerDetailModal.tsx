@@ -45,58 +45,61 @@ export const FlowerDetailModal: React.FC<FlowerDetailModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-0 sm:p-4 md:p-6 animate-in fade-in duration-200">
       <div 
-        className="relative bg-white w-full max-w-4xl rounded-lg shadow-2xl border border-stone-200 overflow-hidden flex flex-col max-h-[92vh]"
+        className="relative bg-white w-full max-w-4xl sm:rounded-lg shadow-2xl border-0 sm:border border-stone-200 overflow-hidden flex flex-col h-full sm:h-auto max-h-screen sm:max-h-[92vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Sticky Header with Title and Close Button */}
-        <div className="px-6 py-4 border-b border-stone-200 bg-[#faf9f5] flex items-center justify-between gap-4 shrink-0">
-          <div className="flex items-center gap-3">
+        <div className="px-4 py-3 sm:px-6 sm:py-4 border-b border-stone-200 bg-[#faf9f5] flex items-center justify-between gap-3 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
             <span
               className="w-3.5 h-3.5 rounded-full border border-black/10 shrink-0"
               style={{ backgroundColor: flower.colorHex }}
               aria-hidden="true"
             />
-            <div>
-              <div className="flex items-baseline gap-2">
-                <h2 className="text-xl font-serif-sc font-bold text-stone-900 tracking-tight">
+            <div className="min-w-0">
+              <div className="flex items-baseline gap-1.5 sm:gap-2 flex-wrap">
+                <h2 className="text-lg sm:text-xl font-serif-sc font-bold text-stone-900 tracking-tight truncate">
                   {flower.name}
                 </h2>
-                <span className="text-xs font-serif-cormorant italic text-stone-500">
+                <span className="text-[11px] sm:text-xs font-serif-cormorant italic text-stone-500 truncate">
                   {flower.latinName}
                 </span>
               </div>
-              <div className="text-[11px] font-mono text-stone-400">
+              <div className="text-[10px] sm:text-[11px] font-mono text-stone-400 truncate">
                 {flower.family} · 属：{flower.genus}
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={() => onToggleSave(flower.id)}
-              className={`p-2 rounded border transition-colors ${
+              className={`p-2 rounded border transition-colors touch-manipulation min-w-[36px] min-h-[36px] flex items-center justify-center ${
                 isSaved
                   ? 'bg-rose-50 border-rose-200 text-rose-600'
                   : 'bg-white border-stone-200 text-stone-600 hover:text-stone-900'
               }`}
               title={isSaved ? '从花园移除' : '收藏入花园'}
+              aria-label="收藏花卉"
             >
               <Heart className={`w-4 h-4 ${isSaved ? 'fill-rose-500 text-rose-500' : ''}`} />
             </button>
 
             <button
               onClick={handleShare}
-              className="p-2 rounded border border-stone-200 bg-white text-stone-600 hover:text-stone-900 transition-colors"
+              className="p-2 rounded border border-stone-200 bg-white text-stone-600 hover:text-stone-900 transition-colors touch-manipulation min-w-[36px] min-h-[36px] flex items-center justify-center"
               title="复制图鉴分享链接"
+              aria-label="分享"
             >
               {copiedLink ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
             </button>
 
             <button
               onClick={onClose}
-              className="p-2 rounded border border-stone-200 bg-white text-stone-600 hover:text-stone-900 transition-colors"
+              className="p-2 rounded border border-stone-200 bg-white text-stone-600 hover:text-stone-900 transition-colors touch-manipulation min-w-[36px] min-h-[36px] flex items-center justify-center"
+              aria-label="关闭"
             >
               <X className="w-4 h-4" />
             </button>
@@ -104,7 +107,7 @@ export const FlowerDetailModal: React.FC<FlowerDetailModalProps> = ({
         </div>
 
         {/* Scrollable Modal Content */}
-        <div className="overflow-y-auto p-6 space-y-6">
+        <div className="overflow-y-auto p-4 sm:p-6 space-y-5 sm:space-y-6 flex-1">
           {/* Top Gallery Split Frame */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
             {/* Left Column: Image Specimen Photo + Aesthetic Filter Preview Controls */}
@@ -259,11 +262,11 @@ export const FlowerDetailModal: React.FC<FlowerDetailModalProps> = ({
 
 
           {/* Tab Navigation for Detailed Sections */}
-          <div className="border-b border-stone-200">
-            <div className="flex items-center gap-6 text-sm font-medium">
+          <div className="border-b border-stone-200 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium whitespace-nowrap min-w-max">
               <button
                 onClick={() => setActiveTab('lore')}
-                className={`pb-2.5 border-b-2 transition-colors ${
+                className={`pb-2.5 border-b-2 transition-colors touch-manipulation ${
                   activeTab === 'lore'
                     ? 'border-stone-900 text-stone-900 font-semibold'
                     : 'border-transparent text-stone-500 hover:text-stone-900'

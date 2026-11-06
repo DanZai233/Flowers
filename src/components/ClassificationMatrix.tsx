@@ -47,46 +47,46 @@ export const ClassificationMatrix: React.FC<ClassificationMatrixProps> = ({
     petFriendlyOnly;
 
   return (
-    <div className="bg-white border border-stone-200 rounded-lg p-5 sm:p-6 shadow-xs space-y-6">
+    <div className="bg-white border border-stone-200 rounded-lg p-3.5 sm:p-6 shadow-xs space-y-4 sm:space-y-6">
       {/* Top Header of the Matrix */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-stone-200">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-stone-500 uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-stone-500 uppercase tracking-wider mb-0.5 sm:mb-1">
             <Filter className="w-3.5 h-3.5 text-stone-400" />
             <span>CLASSIFICATION & CURATION MATRIX</span>
           </div>
-          <h2 className="text-xl font-serif-sc font-semibold text-stone-900">
+          <h2 className="text-lg sm:text-xl font-serif-sc font-semibold text-stone-900">
             双维植物分类与筛选体系
           </h2>
-          <p className="text-xs text-stone-500 font-serif-sc mt-0.5">
-            从严谨的植物学科属系统，到感性的色彩光谱情绪，精准定位您心仪的花卉。
+          <p className="text-[11px] sm:text-xs text-stone-500 font-serif-sc mt-0.5">
+            从植物学科属系统到色彩情绪光谱，精准定位心仪花卉。
           </p>
         </div>
 
         {/* View Switcher: Family vs Color */}
-        <div className="flex items-center gap-1.5 p-1 bg-stone-100 rounded-md shrink-0">
+        <div className="grid grid-cols-2 sm:flex items-center gap-1.5 p-1 bg-stone-100 rounded-md shrink-0 w-full sm:w-auto">
           <button
             onClick={() => setActiveMatrixView('family')}
-            className={`px-3 py-1.5 text-xs font-medium rounded transition-colors flex items-center gap-1.5 ${
+            className={`px-2.5 py-2 sm:px-3 sm:py-1.5 text-xs font-medium rounded transition-colors flex items-center justify-center gap-1.5 touch-manipulation ${
               activeMatrixView === 'family'
                 ? 'bg-white text-stone-900 shadow-2xs font-semibold'
                 : 'text-stone-600 hover:text-stone-900'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span>按科属分类 ({BOTANICAL_FAMILIES.length})</span>
+            <span className="truncate">按科属 ({BOTANICAL_FAMILIES.length})</span>
           </button>
 
           <button
             onClick={() => setActiveMatrixView('color')}
-            className={`px-3 py-1.5 text-xs font-medium rounded transition-colors flex items-center gap-1.5 ${
+            className={`px-2.5 py-2 sm:px-3 sm:py-1.5 text-xs font-medium rounded transition-colors flex items-center justify-center gap-1.5 touch-manipulation ${
               activeMatrixView === 'color'
                 ? 'bg-white text-stone-900 shadow-2xs font-semibold'
                 : 'text-stone-600 hover:text-stone-900'
             }`}
           >
             <Palette className="w-3.5 h-3.5" />
-            <span>按色彩分类 ({COLOR_CATEGORIES.length})</span>
+            <span className="truncate">按色彩 ({COLOR_CATEGORIES.length})</span>
           </button>
         </div>
       </div>

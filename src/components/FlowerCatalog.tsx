@@ -69,13 +69,14 @@ export const FlowerCatalog: React.FC<FlowerCatalogProps> = ({
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="在线图鉴搜索：输入花名、别名、拉丁学名、科属、花语寓意..."
-            className="w-full pl-10 pr-10 py-2.5 text-sm bg-white border border-stone-200 rounded-md text-stone-900 placeholder-stone-400 focus:outline-hidden focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all shadow-2xs"
+            placeholder="搜索花名、学名、别名、科属、花语寓意..."
+            className="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-white border border-stone-200 rounded-md text-stone-900 placeholder-stone-400 focus:outline-hidden focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all shadow-2xs"
           />
           {searchQuery && (
             <button
               onClick={() => onSearchChange('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-1"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-1.5 touch-manipulation"
+              aria-label="清空搜索"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -166,7 +167,7 @@ export const FlowerCatalog: React.FC<FlowerCatalogProps> = ({
                   </div>
 
                   {/* Content Area */}
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3.5 sm:space-y-4">
                     {/* Floriography & Lore teaser */}
                     <div className="space-y-2">
                       {/* Zero-Pill Metadata */}
@@ -271,11 +272,11 @@ export const FlowerCatalog: React.FC<FlowerCatalogProps> = ({
                 />
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 w-full sm:w-auto px-4 sm:px-0">
                 <button
                   onClick={handleLoadMore}
                   disabled={isLoadingMore}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium text-stone-900 bg-white hover:bg-stone-100 border border-stone-300 rounded-md transition-all shadow-2xs hover:shadow-xs active:scale-98"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-medium text-stone-900 bg-white hover:bg-stone-100 border border-stone-300 rounded-md transition-all shadow-2xs hover:shadow-xs active:scale-98 touch-manipulation"
                 >
                   {isLoadingMore ? (
                     <>
@@ -293,7 +294,7 @@ export const FlowerCatalog: React.FC<FlowerCatalogProps> = ({
                 <button
                   onClick={handleShowAll}
                   disabled={isLoadingMore}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-medium text-stone-600 hover:text-stone-900 bg-stone-50 hover:bg-stone-100 border border-stone-200 rounded-md transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-medium text-stone-600 hover:text-stone-900 bg-stone-50 hover:bg-stone-100 border border-stone-200 rounded-md transition-colors touch-manipulation"
                 >
                   <Layers className="w-3.5 h-3.5" />
                   <span>展出全部标本 ({flowers.length})</span>

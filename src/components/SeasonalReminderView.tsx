@@ -78,7 +78,7 @@ export const SeasonalReminderView: React.FC<SeasonalReminderViewProps> = ({
 
         {/* 12-Month Interactive Horizontal Selector Rail */}
         <div className="pt-4 border-t border-stone-200">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-1.5">
+          <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-1 sm:gap-1.5">
             {SEASONAL_CALENDAR_DATA.map((plan) => {
               const isSelected = selectedMonth === plan.month;
               const isCurrent = currentRealMonth === plan.month;

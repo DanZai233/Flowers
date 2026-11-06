@@ -124,7 +124,7 @@ export const FloriographyStudio: React.FC<FloriographyStudioProps> = ({
       {/* Workspace Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Customization Controls (5 cols) */}
-        <div className="lg:col-span-5 bg-white border border-stone-200 rounded-lg p-6 shadow-xs space-y-5 text-xs font-serif-sc">
+        <div className="lg:col-span-5 bg-white border border-stone-200 rounded-lg p-4 sm:p-6 shadow-xs space-y-4 sm:space-y-5 text-xs font-serif-sc">
           <h3 className="text-base font-semibold text-stone-900 pb-2 border-b border-stone-200">
             定制选项
           </h3>
@@ -256,10 +256,10 @@ export const FloriographyStudio: React.FC<FloriographyStudioProps> = ({
           </div>
 
           {/* Operations Toolbar */}
-          <div className="pt-2 border-t border-stone-200 flex items-center justify-between gap-2">
+          <div className="pt-2 border-t border-stone-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
             <button
               onClick={handleCopyText}
-              className="inline-flex items-center gap-1.5 px-3 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-300 rounded text-stone-800 transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-300 rounded text-stone-800 transition-colors touch-manipulation"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? '已复制文字' : '复制诗笺全文'}</span>
@@ -267,7 +267,7 @@ export const FloriographyStudio: React.FC<FloriographyStudioProps> = ({
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded transition-colors touch-manipulation"
             >
               <Printer className="w-3.5 h-3.5 text-amber-300" />
               <span>打印或保存明信片</span>
@@ -277,7 +277,7 @@ export const FloriographyStudio: React.FC<FloriographyStudioProps> = ({
 
         {/* Right Column: Live Archival Letterpress Preview (7 cols) */}
         <div className="lg:col-span-7 space-y-4">
-          <div className="bg-[#fbf9f5] border-2 border-stone-300 rounded-xl p-8 sm:p-10 shadow-lg relative overflow-hidden print:border-none print:shadow-none print:p-0">
+          <div className="bg-[#fbf9f5] border-2 border-stone-300 rounded-xl p-4 sm:p-8 md:p-10 shadow-lg relative overflow-hidden print:border-none print:shadow-none print:p-0">
             {/* Archival Decorative Hairline Corners */}
             <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-stone-400" />
             <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-stone-400" />

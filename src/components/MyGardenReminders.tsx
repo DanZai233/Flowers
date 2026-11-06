@@ -128,17 +128,17 @@ export const MyGardenReminders: React.FC<MyGardenRemindersProps> = ({
   return (
     <div className="space-y-8">
       {/* Top Header Card */}
-      <div className="bg-white border border-stone-200 rounded-lg p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-white border border-stone-200 rounded-lg p-4 sm:p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-stone-500 uppercase tracking-wider mb-1">
-            <Bell className="w-4 h-4 text-amber-800" />
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-stone-500 uppercase tracking-wider mb-0.5 sm:mb-1">
+            <Bell className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-800" />
             <span>MY BOTANICAL GARDEN & CARE REMINDERS</span>
           </div>
-          <h2 className="text-2xl font-serif-sc font-semibold text-stone-900">
+          <h2 className="text-xl sm:text-2xl font-serif-sc font-semibold text-stone-900">
             我的养护花园与时令待办
           </h2>
           <p className="text-xs text-stone-500 font-serif-sc mt-0.5">
-            记录您家中植物的浇水、追肥、修剪日程，随时勾选完成状态，远离养护焦虑。
+            记录家中植物的浇水、追肥、修剪日程，随时打卡完成，告别养护焦虑。
           </p>
         </div>
 
@@ -173,7 +173,7 @@ export const MyGardenReminders: React.FC<MyGardenRemindersProps> = ({
       )}
 
       {/* Section 1: Active Reminders Checklist */}
-      <div className="bg-white border border-stone-200 rounded-lg p-6 shadow-xs space-y-4">
+      <div className="bg-white border border-stone-200 rounded-lg p-4 sm:p-6 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-200">
           <div className="flex items-center gap-3">
             <h3 className="text-lg font-serif-sc font-semibold text-stone-900">
@@ -296,7 +296,7 @@ export const MyGardenReminders: React.FC<MyGardenRemindersProps> = ({
       </div>
 
       {/* Section 2: Saved Flowers Showcase */}
-      <div className="bg-white border border-stone-200 rounded-lg p-6 shadow-xs space-y-4">
+      <div className="bg-white border border-stone-200 rounded-lg p-4 sm:p-6 shadow-xs space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-stone-200">
           <div>
             <h3 className="text-lg font-serif-sc font-semibold text-stone-900 flex items-center gap-2">
@@ -384,9 +384,9 @@ export const MyGardenReminders: React.FC<MyGardenRemindersProps> = ({
 
       {/* New Reminder Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
           <div 
-            className="bg-white w-full max-w-md rounded-lg shadow-xl border border-stone-200 p-6 space-y-4"
+            className="bg-white w-full max-w-md rounded-lg shadow-xl border border-stone-200 p-4 sm:p-6 space-y-4 max-h-[92vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-stone-200">

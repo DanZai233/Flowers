@@ -19,32 +19,32 @@ export const ExhibitionHero: React.FC<ExhibitionHeroProps> = ({
   return (
     <section className="relative overflow-hidden border-b border-stone-200 bg-[#faf9f5]">
       {/* Visual Canvas Split Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-12 lg:pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-8 sm:pt-8 sm:pb-12 lg:pt-12 lg:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Left Column: Curatorial Header & Narrative */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-2 text-xs font-mono text-stone-500 tracking-wider">
-              <span>VOL. 2026 · FLORAL HERBARIUM & EXHIBITION</span>
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-stone-500 tracking-wider">
+              <span>VOL. 2026 · FLORAL HERBARIUM</span>
               <span aria-hidden="true">·</span>
               <span className="text-amber-800">自然美学馆藏</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-sc font-semibold tracking-tight text-stone-900 text-balance leading-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-serif-sc font-semibold tracking-tight text-stone-900 leading-tight">
               芳华录 · 植物花卉数字展览馆
-              <span className="block mt-2 font-serif-cormorant italic text-stone-600 font-normal text-2xl sm:text-3xl lg:text-4xl">
+              <span className="block mt-1 sm:mt-2 font-serif-cormorant italic text-stone-600 font-normal text-xl sm:text-3xl lg:text-4xl">
                 The Poetics of Flowers & Curatorial Care Archive
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-stone-600 font-serif-sc leading-relaxed max-w-2xl text-pretty">
+            <p className="text-sm sm:text-lg text-stone-600 font-serif-sc leading-relaxed max-w-2xl text-pretty">
               一花一世界，一叶一菩提。汇聚自然界瑰丽花卉，解构其<strong className="text-stone-900 font-medium">科属分类</strong>与<strong className="text-stone-900 font-medium">色彩光谱</strong>，
               探寻历代文人笔下的唯美花语与文化传奇；并为每一种植物配备详实严谨的光、温、水、土、修剪与四季种植提醒。
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
               <button
                 onClick={onExploreCatalog}
-                className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-md transition-colors shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-md transition-colors shadow-xs touch-manipulation active:scale-98"
               >
                 <BookOpen className="w-4 h-4 text-amber-200" />
                 <span>进入花卉图鉴展厅</span>
@@ -53,7 +53,7 @@ export const ExhibitionHero: React.FC<ExhibitionHeroProps> = ({
 
               <button
                 onClick={onExploreCalendar}
-                className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-stone-700 bg-stone-100 hover:bg-stone-200 border border-stone-300 rounded-md transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-stone-700 bg-stone-100 hover:bg-stone-200 border border-stone-300 rounded-md transition-colors touch-manipulation active:scale-98"
               >
                 <Calendar className="w-4 h-4 text-amber-700" />
                 <span>查阅节气种植年历</span>
@@ -114,7 +114,7 @@ export const ExhibitionHero: React.FC<ExhibitionHeroProps> = ({
         </div>
 
         {/* Operational Ribbon (Section 3 Pattern A) */}
-        <div className="mt-10 py-3.5 px-5 bg-white border border-stone-200 rounded-md text-xs text-stone-600 flex flex-wrap items-center justify-between gap-4 shadow-2xs font-mono">
+        <div className="mt-6 sm:mt-10 py-3 px-4 sm:py-3.5 sm:px-5 bg-white border border-stone-200 rounded-md text-[11px] sm:text-xs text-stone-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4 shadow-2xs font-mono">
           <div className="flex items-center gap-2">
             <Compass className="w-4 h-4 text-stone-500" />
             <span className="font-sans font-medium text-stone-900">展览总览：</span>
