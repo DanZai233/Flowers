@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-serif: 'Noto Serif SC', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #faf9f5;
+    color: #1f2937;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-serif-cormorant {
+  font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+}
+
+.font-serif-sc {
+  font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 162, 158, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 113, 108, 0.6);
+}
+
+/* Museum archival skeleton shimmer */
+@keyframes museum-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: museum-shimmer 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Botanical Exhibition smooth card fade-in */
+@keyframes botanical-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: botanical-fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

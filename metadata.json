@@ -1,0 +1,6 @@
+{
+  "name": "芳华录 · 植物花卉数字展览馆与养护指南",
+  "description": "集花卉图鉴展览、花语文化、科属色彩双重分类、详实养护指南与季节性种植提醒于一体的典雅植物美学空间。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
